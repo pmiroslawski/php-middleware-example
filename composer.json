@@ -1,0 +1,23 @@
+{
+	"name" : "pmiroslawski/php-middleware-example",
+	"description" : "Example of use pmiroslawski/php-middleware",
+	"type" : "demo",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Pawel Miroslawski",
+			"email" : "pmiroslawski@gmail.com"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"App\\" : "src/"
+		}
+	},
+	"require" : {
+		"php" : ">7.4",
+                "pmiroslawski/php-middleware" : "dev-master"
+	},
+	"require-dev" : {
+		"symfony/var-dumper" : "^5.3"
+	}
+}
