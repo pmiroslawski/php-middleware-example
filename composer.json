@@ -15,7 +15,7 @@
 	},
 	"require" : {
 		"php" : ">7.4",
-                "pmiroslawski/php-middleware" : "dev-master"
+                "pmiroslawski/php-middleware" : "^1"
 	},
 	"require-dev" : {
 		"symfony/var-dumper" : "^5.3"

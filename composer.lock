@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "284479a58cbb73db577e6ca395f0b18f",
+    "content-hash": "7065605d163605e6a42bbf3299a75799",
     "packages": [
         {
             "name": "pmiroslawski/php-middleware",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pmiroslawski/php-middleware.git",
-                "reference": "3c16e6937d0e2fb22d273c86acb1a73a61740850"
+                "reference": "8de428cd3d4697024527b70c2cab0218bcdff10d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/3c16e6937d0e2fb22d273c86acb1a73a61740850",
-                "reference": "3c16e6937d0e2fb22d273c86acb1a73a61740850",
+                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/8de428cd3d4697024527b70c2cab0218bcdff10d",
+                "reference": "8de428cd3d4697024527b70c2cab0218bcdff10d",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,6 @@
             "require-dev": {
                 "symfony/var-dumper": "^5.3"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -47,9 +46,9 @@
             "homepage": "https://github.com/pmiroslawski/php-middleware",
             "support": {
                 "issues": "https://github.com/pmiroslawski/php-middleware/issues",
-                "source": "https://github.com/pmiroslawski/php-middleware/tree/master"
+                "source": "https://github.com/pmiroslawski/php-middleware/tree/v1.0"
             },
-            "time": "2021-06-30T10:32:43+00:00"
+            "time": "2021-06-30T11:47:01+00:00"
         }
     ],
     "packages-dev": [
@@ -307,9 +306,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pmiroslawski/php-middleware": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
