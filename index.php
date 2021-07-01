@@ -23,20 +23,17 @@ class Message
 
 $stopwatch = new Stopwatch();
 
-$subMiddleware = new Middleware([
-    new Dummy1Middleware(),
-    new Dummy2Middleware(),
-    new Dummy3Middleware()
-]);
-$subMiddleware->setStopwatch($stopwatch, 'middleware level 2');
+$middleware = (new Middleware([
+    (new Middleware([
+        new Dummy1Middleware(),
+        new Dummy2Middleware(),
+        new Dummy3Middleware()
+    ]))->setStopwatch($stopwatch, 'middleware level 2'),
 
-$middleware = new Middleware([
-    $subMiddleware,
     new Dummy1Middleware(),
     new Dummy2Middleware(),
     new Dummy3Middleware()
-]);
-$middleware->setStopwatch($stopwatch, 'middleware level 1');
+]))->setStopwatch($stopwatch, 'middleware level 1');
 
 // execute a simple object
 echo "--------------------------------------------\n";
