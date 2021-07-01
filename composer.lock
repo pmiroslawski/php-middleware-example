@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "pmiroslawski/php-middleware",
-            "version": "v2.0",
+            "version": "v2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pmiroslawski/php-middleware.git",
-                "reference": "c6d8b52ee38a31b6f64d2a8f2159f5d1bf229715"
+                "reference": "a0e380cbc753289e6899b6094e113579ebc45a11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/c6d8b52ee38a31b6f64d2a8f2159f5d1bf229715",
-                "reference": "c6d8b52ee38a31b6f64d2a8f2159f5d1bf229715",
+                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/a0e380cbc753289e6899b6094e113579ebc45a11",
+                "reference": "a0e380cbc753289e6899b6094e113579ebc45a11",
                 "shasum": ""
             },
             "require": {
@@ -49,9 +49,9 @@
             "homepage": "https://github.com/pmiroslawski/php-middleware",
             "support": {
                 "issues": "https://github.com/pmiroslawski/php-middleware/issues",
-                "source": "https://github.com/pmiroslawski/php-middleware/tree/v2.0"
+                "source": "https://github.com/pmiroslawski/php-middleware/tree/v2.1"
             },
-            "time": "2021-07-01T10:45:39+00:00"
+            "time": "2021-07-01T11:39:55+00:00"
         },
         {
             "name": "psr/container",
