@@ -5,11 +5,11 @@ require __DIR__ . '/vendor/autoload.php';
 use App\Stamp\Stamp1;
 use App\Stamp\Stamp2;
 use Bit9\Middleware\Middleware;
-use Bit9\Middleware\Core\MiddlewareStack;
-use Bit9\Middleware\Letter\Envelope;
 use App\Middleware\Dummy1Middleware;
 use App\Middleware\Dummy2Middleware;
 use App\Middleware\Dummy3Middleware;
+use Bit9\Middleware\Request;
+use Symfony\Component\Stopwatch\Stopwatch;
 
 class Message
 {
@@ -21,31 +21,37 @@ class Message
     }
 }
 
-$middleware = new Middleware([
-    new Middleware([
-        new Dummy1Middleware([
-            new Dummy3Middleware()
-        ]),
-        new Dummy2Middleware(),
-        new Dummy3Middleware()
-    ]),
+$stopwatch = new Stopwatch();
+
+$subMiddleware = new Middleware([
     new Dummy1Middleware(),
     new Dummy2Middleware(),
     new Dummy3Middleware()
 ]);
+$subMiddleware->setStopwatch($stopwatch, 'middleware level 2');
+
+$middleware = new Middleware([
+    $subMiddleware,
+    new Dummy1Middleware(),
+    new Dummy2Middleware(),
+    new Dummy3Middleware()
+]);
+$middleware->setStopwatch($stopwatch, 'middleware level 1');
 
 // execute a simple object
 echo "--------------------------------------------\n";
-$message = new Envelope(new Message('test'));
+$message = new Request(new Message('test'));
 $middleware->handle($message);
+
+dump($stopwatch->getSections());
 
 // execute a object decorated with stamps
 echo "--------------------------------------------\n";
-$message = new Envelope(new Message('test'), [new Stamp1(), new Stamp2('')]);
+$message = new Request(new Message('test'), [new Stamp1(), new Stamp2('')]);
 $middleware->handle($message);
-
 
 // execute a object - different workflow because of stamps
 echo "--------------------------------------------\n";
-$message = new Envelope(new Message('test2'), [new Stamp1(), new Stamp2('test')]);
+$message = new Request(new Message('test2'), [new Stamp1(), new Stamp2('test')]);
 $middleware->handle($message);
+
