@@ -4,11 +4,12 @@ require __DIR__ . '/vendor/autoload.php';
 
 use App\Stamp\Stamp1;
 use App\Stamp\Stamp2;
-use App\Middleware\Dummy1Handler;
-use App\Middleware\Dummy2Handler;
-use App\Middleware\Dummy3Handler;
-use Bit9\Middleware\Dispatcher;
+use Bit9\Middleware\Middleware;
+use Bit9\Middleware\Core\MiddlewareStack;
 use Bit9\Middleware\Letter\Envelope;
+use App\Middleware\Dummy1Middleware;
+use App\Middleware\Dummy2Middleware;
+use App\Middleware\Dummy3Middleware;
 
 class Message
 {
@@ -20,24 +21,31 @@ class Message
     }
 }
 
-$dispatcher = new Dispatcher([
-    new Dummy1Handler(),
-    new Dummy2Handler(),
-    new Dummy3Handler(),
+$middleware = new Middleware([
+    new Middleware([
+        new Dummy1Middleware([
+            new Dummy3Middleware()
+        ]),
+        new Dummy2Middleware(),
+        new Dummy3Middleware()
+    ]),
+    new Dummy1Middleware(),
+    new Dummy2Middleware(),
+    new Dummy3Middleware()
 ]);
 
 // execute a simple object
 echo "--------------------------------------------\n";
 $message = new Envelope(new Message('test'));
-$dispatcher->dispatch($message);
+$middleware->handle($message);
 
 // execute a object decorated with stamps
 echo "--------------------------------------------\n";
 $message = new Envelope(new Message('test'), [new Stamp1(), new Stamp2('')]);
-$dispatcher->dispatch($message);
+$middleware->handle($message);
 
 
 // execute a object - different workflow because of stamps
 echo "--------------------------------------------\n";
 $message = new Envelope(new Message('test2'), [new Stamp1(), new Stamp2('test')]);
-$dispatcher->dispatch($message);
+$middleware->handle($message);
