@@ -15,7 +15,7 @@
 	},
 	"require" : {
 		"php" : ">7.4",
-                "pmiroslawski/php-middleware" : "^2",
+                "pmiroslawski/php-middleware" : "dev-develop",
 		"symfony/stopwatch": "^5.3"
 	},
 	"require-dev" : {

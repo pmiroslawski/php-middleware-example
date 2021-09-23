@@ -4,27 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4243b6f59219a74fd4eb93942bc67dd0",
+    "content-hash": "243aae28874e55f6d0f519ea4d04f074",
     "packages": [
         {
             "name": "pmiroslawski/php-middleware",
-            "version": "v2.2.0",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pmiroslawski/php-middleware.git",
-                "reference": "84278e2e23cc842bf8889c4a695edd11fc60fcdb"
+                "reference": "8ff8ae853600b9af030254d36c5d721017d05769"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/84278e2e23cc842bf8889c4a695edd11fc60fcdb",
-                "reference": "84278e2e23cc842bf8889c4a695edd11fc60fcdb",
+                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/8ff8ae853600b9af030254d36c5d721017d05769",
+                "reference": "8ff8ae853600b9af030254d36c5d721017d05769",
                 "shasum": ""
             },
             "require": {
                 "php": ">7.4"
             },
             "require-dev": {
-                "symfony/var-dumper": "^5.3"
+                "phpstan/phpstan": "^0",
+                "symfony/var-dumper": "^5"
             },
             "suggest": {
                 "symfony/stopwatch": "Provides a way to profile middlewares"
@@ -49,9 +50,9 @@
             "homepage": "https://github.com/pmiroslawski/php-middleware",
             "support": {
                 "issues": "https://github.com/pmiroslawski/php-middleware/issues",
-                "source": "https://github.com/pmiroslawski/php-middleware/tree/v2.2.0"
+                "source": "https://github.com/pmiroslawski/php-middleware/tree/develop"
             },
-            "time": "2021-09-23T13:52:17+00:00"
+            "time": "2021-09-23T17:22:08+00:00"
         },
         {
             "name": "psr/container",
@@ -498,7 +499,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "pmiroslawski/php-middleware": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
