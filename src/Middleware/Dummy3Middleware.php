@@ -4,11 +4,11 @@ namespace App\Middleware;
 
 use Bit9\Middleware\MiddlewareInterface;
 use Bit9\Middleware\MiddlewareStackInterface;
-use Bit9\Middleware\Request;
+use Bit9\Middleware\RequestInterface;
 
 class Dummy3Middleware implements MiddlewareInterface
 {
-    public function handle(Request $request, ?MiddlewareStackInterface $stack = null): Request
+    public function handle(RequestInterface $request, ?MiddlewareStackInterface $stack = null): RequestInterface
     {
         dump(__METHOD__);
 
