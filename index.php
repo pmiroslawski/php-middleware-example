@@ -21,7 +21,7 @@ class Message
     }
 }
 
-$stopwatch = new Stopwatch();
+$stopwatch = new Stopwatch(true);
 
 $middleware = (new Middleware([
     // you can use a nested middleware
@@ -48,10 +48,12 @@ dump($stopwatch->getSections());
 // execute a object decorated with stamps
 echo "--------------------------------------------\n";
 $message = new Request(new Message('test'), [new Stamp1(), new Stamp2('')]);
-$middleware->handle($message);
+$response = $middleware->handle($message);
+dump($response);
 
-// execute a object - different workflow because of stamps
+// execute a object - different workflow (middleware #3 omitted) because of stamps
 echo "--------------------------------------------\n";
 $message = new Request(new Message('test2'), [new Stamp1(), new Stamp2('test')]);
-$middleware->handle($message);
+$response = $middleware->handle($message);
+dump($response);
 
