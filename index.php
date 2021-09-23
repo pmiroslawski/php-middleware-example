@@ -24,12 +24,14 @@ class Message
 $stopwatch = new Stopwatch();
 
 $middleware = (new Middleware([
+    // you can use a nested middleware
     (new Middleware([
         new Dummy1Middleware(),
         new Dummy2Middleware(),
         new Dummy3Middleware()
     ]))->setStopwatch($stopwatch, 'middleware level 2'),
 
+    // or just regular middlewares
     new Dummy1Middleware(),
     new Dummy2Middleware(),
     new Dummy3Middleware()
@@ -40,6 +42,7 @@ echo "--------------------------------------------\n";
 $message = new Request(new Message('test'));
 $middleware->handle($message);
 
+// show the stoppwatch
 dump($stopwatch->getSections());
 
 // execute a object decorated with stamps
