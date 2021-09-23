@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "243aae28874e55f6d0f519ea4d04f074",
+    "content-hash": "4243b6f59219a74fd4eb93942bc67dd0",
     "packages": [
         {
             "name": "pmiroslawski/php-middleware",
-            "version": "dev-develop",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pmiroslawski/php-middleware.git",
-                "reference": "8ff8ae853600b9af030254d36c5d721017d05769"
+                "reference": "cce191f69192399959012aaf982c88f81823eb0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/8ff8ae853600b9af030254d36c5d721017d05769",
-                "reference": "8ff8ae853600b9af030254d36c5d721017d05769",
+                "url": "https://api.github.com/repos/pmiroslawski/php-middleware/zipball/cce191f69192399959012aaf982c88f81823eb0b",
+                "reference": "cce191f69192399959012aaf982c88f81823eb0b",
                 "shasum": ""
             },
             "require": {
@@ -50,9 +50,9 @@
             "homepage": "https://github.com/pmiroslawski/php-middleware",
             "support": {
                 "issues": "https://github.com/pmiroslawski/php-middleware/issues",
-                "source": "https://github.com/pmiroslawski/php-middleware/tree/develop"
+                "source": "https://github.com/pmiroslawski/php-middleware/tree/v2.3.0"
             },
-            "time": "2021-09-23T17:22:08+00:00"
+            "time": "2021-09-23T17:25:56+00:00"
         },
         {
             "name": "psr/container",
@@ -499,9 +499,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pmiroslawski/php-middleware": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
